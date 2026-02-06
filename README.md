@@ -79,11 +79,24 @@ android/
 
 ---
 
-## Accident Hotspot Data
+## 📂 Project Structure
 
+```text
+lib/
+├── main.dart
+├── map_screen.dart
+├── data/
+│   └── danger_zones.dart
+├── secrets.dart
+assets/
+└── alert.mp3
+android/
+└── AndroidManifest.xml
+```
+
+📍 Accident Hotspot Data
 Danger zones are stored separately for scalability and easy updates.
 
-dart
 class DangerZones {
   static const List<Map<String, double>> zones = [
     {"lat": 12.9258, "lng": 74.8770},
@@ -91,7 +104,7 @@ class DangerZones {
     {"lat": 12.938859, "lng": 74.920614} // test zone
   ];
 }
-Google Maps API Configuration
+🔑 Google Maps API Configuration
 Enable the following APIs in Google Cloud Console:
 
 Maps SDK for Android
@@ -103,15 +116,14 @@ Directions API
 AndroidManifest.xml
 <meta-data
     android:name="com.google.android.geo.API_KEY"
-    android:value="YOUR_API_KEY"/>
+    android:value="YOUR_API_KEY" />
 secrets.dart
 const String googleApiKey = "YOUR_API_KEY";
-Running the Application
+▶️ Running the Application
 flutter clean
 flutter pub get
 flutter run
-Requirements
-
+✅ Requirements
 Android device or emulator
 
 Location services enabled
@@ -120,14 +132,12 @@ Internet connection
 
 Sound enabled (for alerts)
 
-Configuration Options
-Change detection radius:
-
+⚙️ Configuration Options
+Change Detection Radius
 double detectionRadius = 10.0; // meters
-Change default map view:
-
+Change Default Map View
 MapType.hybrid
-Use Cases
+🚗 Use Cases
 Driver safety assistance
 
 Accident-prone zone awareness
@@ -136,7 +146,7 @@ Smart navigation systems
 
 Academic GIS and mobile systems projects
 
-Future Enhancements
+🔮 Future Enhancements
 Firebase authentication (Google Sign-In)
 
 Cloud-based hotspot updates
@@ -147,7 +157,7 @@ Offline map support
 
 iOS deployment
 
-Author
+👨‍💻 Author
 Dishanth
 Engineering Student
 Mini Project – Mobile Application Development
