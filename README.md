@@ -57,7 +57,7 @@ lib/
 - main.dart
 - map_screen.dart
 - data/
-  - danger_zones.dart
+- danger_zones.dart
 - secrets.dart
 
 assets/
