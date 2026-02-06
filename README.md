@@ -83,7 +83,7 @@ android/
 
 Danger zones are stored separately for scalability and easy updates.
 
-```dart
+dart
 class DangerZones {
   static const List<Map<String, double>> zones = [
     {"lat": 12.9258, "lng": 74.8770},
