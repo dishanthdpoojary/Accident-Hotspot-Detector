@@ -1,158 +1,153 @@
-🚧 Accident Hotspot Alert App (Flutter)
+# Accident Hotspot Alert System (Flutter)
 
-A Flutter-based mobile application that works like Google Maps and alerts users when they enter accident-prone zones using live GPS tracking, vibration, sound alerts, and on-map visual warnings.
+A real-time, location-aware mobile application built with Flutter that detects accident-prone zones and alerts users instantly using live GPS tracking, map visualization, sound, and vibration — similar to Google Maps safety alerts.
 
-📱 Features
-🗺️ Maps & Navigation
+---
 
-Google Maps integration
+## Overview
 
-Map types:
+The **Accident Hotspot Alert System** is designed to improve road safety by notifying users when they enter predefined accident-prone areas. The application continuously monitors the user's live location and triggers alerts when the user comes within a specified radius of danger zones.
 
-Default
+This project is developed as an **engineering mini-project** and demonstrates practical use of mobile GIS, real-time tracking, and Google Maps APIs.
 
-Hybrid (Satellite + Labels)
+---
 
-Terrain
+## Key Features
 
-Live current location tracking
+### Real-Time Location Tracking
+- Live GPS tracking using device sensors
+- Continuous background location updates
+- Smooth camera movement following the user
 
-Custom “Center on Me” button
+### Accident Hotspot Detection
+- Centralized danger-zone dataset
+- Radius-based proximity detection
+- Configurable detection distance (meters)
 
-Zoom in / zoom out controls
+### User Alerts
+- Audio alert (siren sound)
+- Device vibration
+- On-screen warning banner
+- Visual danger zones on the map
 
-Google-Maps-style UI
+### Map & Navigation
+- Google Maps integration
+- Map modes:
+  - Default
+  - Hybrid (Satellite + Labels)
+  - Terrain
+- Custom zoom controls
+- “Center on my location” button (Google Maps style)
 
-⚠️ Accident Hotspot Detection
+### Search & Routing
+- Google Places Autocomplete
+- Address and place search
+- Driving route generation
+- Route polyline rendering
+- Destination marker
+- Clear route option
 
-Predefined accident-prone zones (centralized data file)
+---
 
-Radius-based detection (configurable, e.g. 10m for testing)
+## Technology Stack
 
-Automatic alerts when user enters a danger zone:
+| Category | Technology |
+|--------|------------|
+| Framework | Flutter (Dart) |
+| Maps | Google Maps SDK |
+| Location | Geolocator |
+| Search | Google Places API |
+| Routing | Google Directions API |
+| Alerts | Audioplayers, Vibration |
+| Platform | Android |
 
-🔊 Sound alert
+---
 
-📳 Vibration
+## Project Structure
 
-🚨 On-screen warning popup
-
-Visual danger zones using markers + circles
-
-🔍 Search & Routing
-
-Google Places autocomplete search
-
-Search by place or address
-
-Fetch and display driving routes
-
-Draw route polylines on the map
-
-Destination marker handling
-
-Clear route option
-
-🛠️ Tech Stack
-Layer	Technology
-Framework	Flutter (Dart)
-Maps	google_maps_flutter
-Location	geolocator
-Alerts	vibration, audioplayers
-APIs	Google Maps, Places, Directions
-Platform	Android
-📂 Project Structure
 lib/
- ├── main.dart
- ├── map_screen.dart
- ├── data/
- │    └── danger_zones.dart
- ├── secrets.dart
+├── main.dart
+├── map_screen.dart
+├── data/
+│ └── danger_zones.dart
+├── secrets.dart
 assets/
- └── alert.mp3
+└── alert.mp3
 android/
- └── AndroidManifest.xml
+└── AndroidManifest.xml
 
-🔑 API Configuration
 
-This app uses one Google Maps API key with the following enabled:
+---
 
-✅ Maps SDK for Android
+## Accident Hotspot Data
 
-✅ Places API
+Danger zones are stored separately for scalability and easy updates.
 
-✅ Directions API
-
-Add your API key in:
-
-android/app/src/main/AndroidManifest.xml
-<meta-data
-    android:name="com.google.android.geo.API_KEY"
-    android:value="YOUR_API_KEY_HERE" />
-
-lib/secrets.dart
-const String googleApiKey = "YOUR_API_KEY_HERE";
-
-📍 Danger Zones Configuration
-
-All accident-prone locations are stored in a separate file for easy maintenance.
-
-lib/data/danger_zones.dart
+```dart
 class DangerZones {
   static const List<Map<String, double>> zones = [
     {"lat": 12.9258, "lng": 74.8770},
     {"lat": 12.9262, "lng": 74.8582},
-    {"lat": 12.938859, "lng": 74.920614}, // Home test zone
+    {"lat": 12.938859, "lng": 74.920614} // test zone
   ];
 }
+Google Maps API Configuration
+Enable the following APIs in Google Cloud Console:
 
-▶️ How to Run
+Maps SDK for Android
+
+Places API
+
+Directions API
+
+AndroidManifest.xml
+<meta-data
+    android:name="com.google.android.geo.API_KEY"
+    android:value="YOUR_API_KEY"/>
+secrets.dart
+const String googleApiKey = "YOUR_API_KEY";
+Running the Application
 flutter clean
 flutter pub get
 flutter run
+Requirements
 
+Android device or emulator
 
-📱 Make sure GPS is enabled on your phone
-🔊 Volume should be ON to hear alerts
+Location services enabled
 
-⚙️ Customization
+Internet connection
 
+Sound enabled (for alerts)
+
+Configuration Options
 Change detection radius:
 
 double detectionRadius = 10.0; // meters
-
-
-Switch default map type:
+Change default map view:
 
 MapType.hybrid
+Use Cases
+Driver safety assistance
 
+Accident-prone zone awareness
 
-Replace alert sound:
+Smart navigation systems
 
-assets/alert.mp3
+Academic GIS and mobile systems projects
 
-🚀 Future Enhancements
-
+Future Enhancements
 Firebase authentication (Google Sign-In)
 
-Backend-driven accident hotspot updates
+Cloud-based hotspot updates
 
-Offline map caching
+Speed-based warning logic
 
-Speed-based alert severity
+Offline map support
 
-iOS support
+iOS deployment
 
-📸 Screenshots
-
-(Add screenshots here)
-
-📄 License
-
-This project is for academic / demo purposes.
-You’re free to modify and extend it.
-
-🙌 Author
-
-Developed by Dishanth
-Engineering Student | Flutter Developer
+Author
+Dishanth
+Engineering Student
+Mini Project – Mobile Application Development
