@@ -79,24 +79,11 @@ android/
 
 ---
 
-## 📂 Project Structure
+##  Accident Hotspot Data
 
-```text
-lib/
-├── main.dart
-├── map_screen.dart
-├── data/
-│   └── danger_zones.dart
-├── secrets.dart
-assets/
-└── alert.mp3
-android/
-└── AndroidManifest.xml
-```
-
-📍 Accident Hotspot Data
 Danger zones are stored separately for scalability and easy updates.
 
+```dart
 class DangerZones {
   static const List<Map<String, double>> zones = [
     {"lat": 12.9258, "lng": 74.8770},
@@ -104,7 +91,7 @@ class DangerZones {
     {"lat": 12.938859, "lng": 74.920614} // test zone
   ];
 }
-🔑 Google Maps API Configuration
+ Google Maps API Configuration
 Enable the following APIs in Google Cloud Console:
 
 Maps SDK for Android
