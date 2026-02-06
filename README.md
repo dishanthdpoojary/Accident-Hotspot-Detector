@@ -222,4 +222,5 @@ Trigger audio (audioplayers), vibration, and show a banner when `true`.
 ## License & Author
 
 Author: Dishanth  
-Engineering Student — Mini Project: Mobile Application Developer
+Engineering Student
+Mobile Application Developer
