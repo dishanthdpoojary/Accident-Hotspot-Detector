@@ -220,7 +220,8 @@ Trigger audio (audioplayers), vibration, and show a banner when `true`.
 ---
 
 ## License & Author
-
 Author: Dishanth D Poojary
+
 Engineering Student
+
 Mobile Application Developer
